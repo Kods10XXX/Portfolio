@@ -513,7 +513,7 @@
           </div>
           <div class="fact-card">
             <span class="k">Formation actuelle</span>
-            <span class="v">Master 1 · Data Science — Faculté des Sciences de Monastir</span>
+            <span class="v">Master 2 · Data Science — Faculté des Sciences de Monastir</span>
           </div>
           <div class="fact-card">
             <span class="k">Stack principale</span>
@@ -656,7 +656,6 @@
       <!-- Project 0: Fraud Detection System (current internship) -->
       <article class="project reveal">
         <div class="project-media project-media--diagram">
-          <span class="tag tag--live"><span class="live-dot"></span> En cours — stage actuel</span>
           <svg viewBox="0 0 560 400" class="fds-diagram" role="img" aria-label="Architecture du système de détection de fraude : moteur de règles temps réel, scoring par Machine Learning, et couche graphe optionnelle">
             <defs>
               <linearGradient id="fdsFlow" x1="0" y1="0" x2="1" y2="0">
@@ -723,10 +722,10 @@
         </div>
         <div class="project-body">
           <h3>Système de détection de fraude en temps réel</h3>
-          <span class="subtitle">Stage en cours · Fintech / Wallet mobile · Tunisie</span>
+          <span class="subtitle">· Fintech / Wallet mobile · Tunisie</span>
           <p>Prototype fonctionnel de détection de fraude pour une application de paiement mobile, conçu autour d'une architecture modulaire à trois couches : règles temps réel, scoring par Machine Learning, et — en option — analyse de graphe pour détecter des réseaux de comptes suspects. Le projet suit les exigences réglementaires tunisiennes (BCT / TUNPAY) et la logique AML du CTAF.</p>
           <div class="stat-row">
-            <div class="stat"><span class="num">3/4</span><span class="lab">Sprints complétés</span></div>
+            <div class="stat"><span class="num">4/4</span><span class="lab">Sprints complétés</span></div>
             <div class="stat"><span class="num">6.3M</span><span class="lab">Transactions traitées</span></div>
             <div class="stat"><span class="num">4</span><span class="lab">Règles temps réel (Redis)</span></div>
             <div class="stat"><span class="num">2</span><span class="lab">Modèles ML comparés</span></div>
@@ -736,7 +735,7 @@
             <li>Pipeline de feature engineering sur données transactionnelles à grande échelle, optimisé pour tourner en moins de 90 secondes.</li>
             <li>Moteur de règles adossé à Redis (vélocité, ratios suspects, structuring) avec décision à 3 niveaux : accepter / vérifier / bloquer.</li>
             <li>Scoring ML comparatif (Isolation Forest vs XGBoost) — validation en cours sur données réelles pour fiabiliser les métriques au-delà du jeu de données synthétique de départ.</li>
-            <li>Prochaine étape : service de démonstration FastAPI + Docker de bout en bout.</li>
+            <li>Service de démonstration FastAPI + Docker de bout en bout.</li>
           </ul>
           <div class="chip-row">
             <span class="chip">Python</span><span class="chip">Scikit-learn</span><span class="chip">XGBoost</span><span class="chip">Redis</span><span class="chip">FastAPI</span><span class="chip">Docker</span><span class="chip">Neo4j</span>
@@ -747,12 +746,12 @@
       <!-- Project 1: NeRF -->
       <article class="project reveal">
         <div class="project-media">
-          <span class="tag">Deep Learning · Computer Vision</span>
+          <span class="tag">Deep Learning · Imagerie biomédicale</span>
           <img src="assets/3d-reconstruction.png" class="project-img project-img-ui" alt="Tableau de bord d'entraînement en temps réel du modèle NeRF : itération, loss, PSNR, temps par itération, SSIM et speedup GPU" loading="lazy">
         </div>
         <div class="project-body">
-          <h3>Reconstruction 3D parallèle — Neural Radiance Fields</h3>
-          <span class="subtitle">Projet académique · Calcul Parallèle et Distribué · Master 1</span>
+          <h3>Reconstruction 3D par NeRF — du calcul parallèle à l'imagerie biomédicale</h3>
+          <span class="subtitle">Projet académique (Master 1) prolongé en stage · ARSII</span>
           <p>Système complet qui reconstruit la géométrie 3D d'un objet à partir d'un ensemble de photos, puis génère des vues inédites sous n'importe quel angle. L'objectif : appliquer concrètement le calcul parallèle (GPU CUDA et multiprocessing CPU) à un vrai pipeline de Deep Learning, et mesurer le gain réel — jusqu'à un dashboard live suivant loss, PSNR et speedup itération par itération.</p>
           <div class="stat-row">
             <div class="stat"><span class="num">111×</span><span class="lab">Speedup GPU</span></div>
@@ -768,10 +767,9 @@
             <li>Extraction parallèle des frames vidéo via <code>multiprocessing.Pool</code>, rendu final exporté en vidéo 360°.</li>
           </ul>
           <div class="chip-row" style="margin-bottom:22px;">
-            <span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">CUDA</span><span class="chip">OpenMP</span><span class="chip">Mixed Precision</span>
+            <span class="chip">Python</span><span class="chip">PyTorch</span><span class="chip">CUDA</span><span class="chip">OpenMP</span><span class="chip">Mixed Precision</span><span class="chip">Google Colab</span><span class="chip">Imagerie biomédicale</span>
           </div>
-
-          <div class="mini-gallery">
+<div class="mini-gallery">
             <figure>
               <img src="assets/nerf-dataset.jpg" alt="10 vues du dataset LEGO utilisé pour l'entraînement, illustrant la couverture angulaire à 360°" loading="lazy">
               <figcaption>Dataset LEGO — couverture 360°</figcaption>
@@ -785,6 +783,37 @@
               <figcaption>Benchmark GPU vs CPU par batch</figcaption>
             </figure>
           </div>
+          <div class="bio-block">
+            <h4>Extension biomédicale — stage ARSII</h4>
+            <span class="subtitle">Optimisation du pipeline précédent, appliquée au domaine médical</span>
+            <p>Le pipeline du projet universitaire sert de point de départ : même modèle NeRF, repris et accéléré pour la reconstruction 3D d'images biomédicales.</p>
+            <!-- TODO : ajouter ici les résultats chiffrés du stage ARSII (speedup, PSNR sur données biomédicales) -->
+            <ul>
+                  <li>Pipeline entièrement en PyTorch sur GPU : rayons cone-beam, rendu par intégrale de ligne (Beer-Lambert), précision mixte FP16 sur GPU T4.</li>
+              <li>Données : volume CT DICOM (jeu Pancreas-CT), projections cone-beam simulées sur 90 angles (détecteur 160×160, volume 128³).</li>
+              <li>Livrables : synthèse de nouvelles vues, coupe reconstruite et scène 3D tournante (extraction de surface par marching cubes).</li>
+            </ul>
+            <p style="margin-top:12px"><strong>Résultats préliminaires</strong> — NeRF entraîné sur des projections cone-beam simulées à partir d'un volume CT.</p>
+            <ul>
+              <li>Entraînement sur 8 000 itérations : la perte MSE passe d'environ 10⁵ à environ 20 et décroît encore en fin d'entraînement.</li>
+              <li>Les projections synthétisées reproduisent la silhouette et les structures de grande échelle de la vérité terrain ; les détails fins restent lissés.</li>
+              <li>Synthèse de nouvelles vues et coupe reconstruite (plan z = 0) obtenues à partir du même modèle.</li>
+            </ul>
+          
+            <div class="mini-gallery">
+            <figure>
+              <img src="assets/arsii-ct-slice.png" alt="Coupe axiale du volume CT utilisé" loading="lazy">
+              <figcaption>Coupe axiale d'un volume CT du jeu Pancreas-CT (NIH / TCIA).</figcaption>
+            </figure>
+            <figure>
+              <img src="assets/arsii-loss.png" alt="Courbe de perte MSE sur 8 000 itérations" loading="lazy">
+              <figcaption>Courbe de perte (MSE, échelle log) sur 8 000 itérations.</figcaption>
+            </figure>
+          </div>
+          </div>
+
+
+          
 
           <p class="note-pill">Code source du projet universitaire — disponible sur demande.</p>
         </div>
